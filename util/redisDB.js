@@ -1,4 +1,3 @@
-const { text } = require('body-parser');
 let redis=require('redis');
 const {redisConfig}=require('../config/db');
 const redis_client=redis.createClient(redisConfig);

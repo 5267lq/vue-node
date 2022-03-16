@@ -1,1 +1,1 @@
-exports.redisConfig={host:'127.0.0.1',prot:6379,ttl:5*60*1000}
+exports.redisConfig={host:'127.0.0.1',prot:'6379',ttl:5*60*1000}

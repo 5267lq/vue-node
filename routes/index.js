@@ -3,9 +3,14 @@ var router = express.Router();
 const util=require('../util/common');
 //引入导航栏逻辑处理
 var {getNavMenu}=require('../controller/getData');
+//引入底部逻辑处理
 var {getFooter}=require('../controller/getData');
+//引入友情链接逻辑处理
 var {getLinks}=require('../controller/getData');
+//引入首页轮播图逻辑处理
 var {getIndexPic}=require('../controller/getData');
+//引入热门文章逻辑处理
+var {getHotArticle}=require('../controller/getData');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -25,5 +30,7 @@ router.get('/getFooter',getFooter);
 router.get('/getLinks',getLinks);
 //获取首页轮播图路由
 router.get('/getIndexPic',getIndexPic);
+//获取热门文章路由
+router.get('/getHotArticle',getHotArticle);
 
 module.exports = router;

@@ -11,6 +11,8 @@ var {getLinks}=require('../controller/getData');
 var {getIndexPic}=require('../controller/getData');
 //引入热门文章逻辑处理
 var {getHotArticle}=require('../controller/getData');
+//引入文章列表逻辑处理
+var {getArticleList}=require('../controller/getData');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -32,5 +34,7 @@ router.get('/getLinks',getLinks);
 router.get('/getIndexPic',getIndexPic);
 //获取热门文章路由
 router.get('/getHotArticle',getHotArticle);
+//获取文章列表路由
+router.get('/getArticleList',getArticleList);
 
 module.exports = router;

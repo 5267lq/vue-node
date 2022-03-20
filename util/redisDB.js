@@ -34,7 +34,7 @@ redis.set=(key,value)=>{
 text=async(key)=>{
     let getTempValue=await new Promise((resolve)=>{
         redis_client.get(key,(err,res)=>{
-            console.log(err);
+            // console.log(err);
             return resolve(res);
         });
     });
@@ -77,11 +77,11 @@ redis.zadd=(key,member,num)=>{
 
 //改写redis有序集合zrevrange函数，获取一定范围内的元素
 tempData=async(key,min,max)=>{
-    let tData=await new Promise((resolve)=>{
+    let tData=await new Promise((resolve=>{
         redis_client.zrevrange([key,min,max,'withscores'],(err,res)=>{
             return resolve(res);
         });
-    });
+    }));
     let oData=[];
     for(let i=0;i<tData.length;i+=2){
         oData.push({member:JSON.parse(tData[i]),score:tData[i+1]});
